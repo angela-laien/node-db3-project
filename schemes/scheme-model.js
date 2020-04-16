@@ -21,6 +21,7 @@ function findById(id) {
 }
 
 function findSteps(id) {
+    // select * from Schemes joins steps on schemes.id = steps.scheme_id;
     return db.select('*').from('schemes')
         .join('steps', 'schemes.id', 'steps.scheme_id')
         .where('schemes.id', id)
